@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Menu Hover Image Animation | Codrops</title>
+	<meta name="description" content="A hover animation for a menu where images appear with an effect">
+	<meta name="keywords" content="gsap, animation, hover, menu, image, web design, javascript, template">
+	<meta name="author" content="Codrops">
+	<link rel="shortcut icon" href="favicon.26242483.ico">
+	<link rel="stylesheet" href="https://use.typekit.net/bjb6aay.css">
+	<link rel="stylesheet" type="text/css" href="base.98fd6c19.css">
+	<script>document.documentElement.className = "js";
+
+var supportsCssVars = function supportsCssVars() {
+  var e,
+      t = document.createElement("style");
+  return t.innerHTML = "root: { --tmp-var: bold; }", document.head.appendChild(t), e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)")), t.parentNode.removeChild(t), e;
+};
+
+supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
+	<script src="//tympanus.net/codrops/adpacks/analytics.js"></script>
+</head>
+<body class="loading">
+	<main>
+		<div class="frame">
+			<div class="frame__title-wrap">
+				<h1 class="frame__title">Rapid Image Hover Menu</h1>
+				<div class="frame__links">
+					<a href="https://tympanus.net/Development/GlitchyGrid/" class="frame__link">Previous demo</a>
+					<a href="https://tympanus.net/codrops/?p=50362" class="frame__link">Article</a>
+					<a href="https://github.com/codrops/RapidImageHoverMenu/" class="frame__link">GitHub</a>
+				</div>
+			</div>
+			<span class="frame__button" aria-hidden="true">x Menu</span>
+		</div>
+		<nav class="menu">
+			<a class="menu__item" data-img="img/1.jpg">
+				<span class="menu__item-text"><span class="menu__item-textinner">Maria Costa</span></span>
+				<span class="menu__item-sub">Style Reset 66 Berlin</span>
+			</a>
+			<a class="menu__item" data-img="img/2.jpg">
+				<span class="menu__item-text"><span class="menu__item-textinner">Lana Ferrari</span></span>
+				<span class="menu__item-sub">Fashion Week Milano</span>
+			</a>
+			<a class="menu__item" data-img="img/3.jpg">
+				<span class="menu__item-text"><span class="menu__item-textinner">Franklin Roth</span></span>
+				<span class="menu__item-sub">Amber Convention London</span>
+			</a>
+			<a class="menu__item" data-img="img/4.jpg">
+				<span class="menu__item-text"><span class="menu__item-textinner">Cristie Noe</span></span>
+				<span class="menu__item-sub">Tokyo Summer Trends</span>
+			</a>
+			<a class="menu__item" data-img="img/5.jpg">
+				<span class="menu__item-text"><span class="menu__item-textinner">Wilma Quest</span></span>
+				<span class="menu__item-sub">2021 West End New York</span>
+			</a>
+			<a class="menu__item" data-img="img/6.jpg">
+				<span class="menu__item-text"><span class="menu__item-textinner">Gary Winston</span></span>
+				<span class="menu__item-sub">Sunset Festival Greenwich</span>
+			</a>
+			<a class="menu__item" data-img="img/7.jpg">
+				<span class="menu__item-text"><span class="menu__item-textinner">Nesta Freeman</span></span>
+				<span class="menu__item-sub">Spirit Garments Jakarta</span>
+			</a>
+			<a class="menu__item" data-img="img/8.jpg">
+				<span class="menu__item-text"><span class="menu__item-textinner">Jolanda French</span></span>
+				<span class="menu__item-sub">Bluehouse Fashion Toronto</span>
+			</a>
+			<a class="menu__item" data-img="img/9.jpg">
+				<span class="menu__item-text"><span class="menu__item-textinner">Samantha Dunne</span></span>
+				<span class="menu__item-sub">Glamour Week Christchurch</span>
+			</a>
+			<a class="menu__item" data-img="img/10.jpg">
+				<span class="menu__item-text"><span class="menu__item-textinner">Tony Albert</span></span>
+				<span class="menu__item-sub">Piu Bella Fashion Rome</span>
+			</a>
+			<a class="menu__item" data-img="img/11.jpg">
+				<span class="menu__item-text"><span class="menu__item-textinner">Jacky Speed</span></span>
+				<span class="menu__item-sub">Sea Season Kuala Lumpur</span>
+			</a>
+			<a class="menu__item" data-img="img/12.jpg">
+				<span class="menu__item-text"><span class="menu__item-textinner">Carlton Holle</span></span>
+				<span class="menu__item-sub">Inspire Fashion Casablanca</span>
+			</a>
+			<a class="menu__item" data-img="img/13.jpg">
+				<span class="menu__item-text"><span class="menu__item-textinner">Kylla Maushet</span></span>
+				<span class="menu__item-sub">One to Ten Moscow</span>
+			</a>
+			<a class="menu__item" data-img="img/14.jpg">
+				<span class="menu__item-text"><span class="menu__item-textinner">Fernando Castello</span></span>
+				<span class="menu__item-sub">Miksa Style Week Lisbon</span>
+			</a>
+			<a class="menu__item" data-img="img/15.jpg">
+				<span class="menu__item-text"><span class="menu__item-textinner">Sofie Henriette</span></span>
+				<span class="menu__item-sub">Free Fashion Budapest</span>
+			</a>
+			<a class="menu__item" data-img="img/16.jpg">
+				<span class="menu__item-text"><span class="menu__item-textinner">Adelie Bisset</span></span>
+				<span class="menu__item-sub">Couture Night Paris</span>
+			</a>
+			<a class="menu__item" data-img="img/17.jpg">
+				<span class="menu__item-text"><span class="menu__item-textinner">Takato Yang</span></span>
+				<span class="menu__item-sub">Modern Touch Hong Kong</span>
+			</a>
+			<a class="menu__item" data-img="img/18.jpg">
+				<span class="menu__item-text"><span class="menu__item-textinner">Hadrian Kaiser</span></span>
+				<span class="menu__item-sub">Neverland Fashion Madrid</span>
+			</a>
+			<p class="credits">Images by <a href="https://www.behance.net/AndrewLili">Andrey Yakovlev and Lili Aleeva</a>, licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en_US">CC BY-NC-ND 4.0</a></p>
+		</nav>
+
+	</main>
+	<svg class="cursor" width="80" height="80" viewBox="0 0 80 80">
+		<circle class="cursor__inner" cx="40" cy="40" r="20"></circle>
+	</svg>
+	<script src="js.00a46daa.js"></script>
+	<script src="https://tympanus.net/codrops/adpacks/cda.js"></script>
+</body>
+</html>
