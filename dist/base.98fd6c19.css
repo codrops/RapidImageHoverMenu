@@ -1,0 +1,380 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+:root {
+	font-size: 13px;
+}
+
+body {
+	margin: 0;
+	--color-text: #111;
+	--color-bg: #edeee9;
+	--color-link: #000;
+	--color-link-hover: #000;
+	--color-menu: #000;
+	--color-menu-hover: #f32015;
+	color: var(--color-text);
+	background-color: var(--color-bg);
+	--cursor-stroke: #000;
+    --cursor-fill: #000;
+    --cursor-stroke-width: 1px;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-family: degular, sans-serif;
+}
+
+/* Page Loader */
+.js .loading::before,
+.js .loading::after {
+	content: '';
+	position: fixed;
+	z-index: 1000;
+}
+
+.js .loading::before {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: var(--color-bg);
+}
+
+.js .loading::after {
+	top: 50%;
+	left: 50%;
+	width: 60px;
+	height: 60px;
+	margin: -30px 0 0 -30px;
+	opacity: 0.4;
+	background: var(--color-link);
+	animation: loaderAnim 0.7s linear infinite alternate forwards;
+
+}
+
+@keyframes loaderAnim {
+	to {
+		opacity: 1;
+		transform: scale3d(0.5,0.5,1);
+	}
+}
+
+a {
+	text-decoration: none;
+	color: var(--color-link);
+	outline: none;
+	cursor: pointer;
+}
+
+a:hover,
+a:focus {
+	color: var(--color-link-hover);
+	outline: none;
+}
+
+.frame {
+	top: 0;
+	padding: 1rem 1.5rem;
+	position: fixed;
+	z-index: 1000;
+	background: #f0f0f0;
+	width: 100%;
+	display: flex;
+	text-transform: uppercase;
+}
+
+.frame__title {
+	font-size: 1rem;
+	margin: 0;
+	font-weight: 400;
+}
+
+.frame__links {
+	margin: 0.5rem 0;
+}
+
+.frame__links a {
+	border-bottom: 1px solid currentColor;
+	transition: 0.2s border-color;
+}
+
+.frame__links a:hover,
+.frame__links a:focus {
+	border-color: transparent;
+}
+
+.frame__links a:not(:last-child) {
+	margin-right: 1rem;
+}
+
+.frame__button {
+	word-spacing: 0.75rem;
+	color: var(--color-link);
+	margin-left: auto;
+}
+
+.menu {
+	padding: 10rem 0 20vh 0;
+	width: 90vw;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	text-align: right;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	counter-reset: menucounter;
+}
+
+.menu__item {
+	flex: none;
+	display: flex;
+	justify-content: flex-end;
+	position: relative;
+	padding-left: 5rem;
+}
+
+.menu__item::before {
+	counter-increment: menucounter;
+	content: counters(menucounter, ".", decimal-leading-zero);
+	position: absolute;
+	left: 0;
+	border-left: 3px solid currentColor;
+	top: 20%;
+	height: 60%;
+	padding-left: 1rem;
+	display: flex;
+	align-items: center;
+	line-height: 1;
+	font-weight: bold;
+	opacity: 0;
+	transform: translateX(-1rem);
+	transition: transform 0.3s, opacity 0.3s;
+}
+
+.menu__item:hover::before {
+	opacity: 1;
+	transform: translateX(0);
+}
+
+.menu__item-text {
+	position: relative;
+	cursor: pointer;
+	padding: 0.5rem;
+	display: block;
+	overflow: hidden;
+	font-size: 6vw;
+}
+
+.menu__item-textinner {
+	display: block;
+	font-family: goldenbook, serif;
+	font-weight: 300;
+	text-transform: uppercase;
+	white-space: nowrap;
+	color: var(--color-menu);
+}
+
+.js .menu__item-textinner {
+	transform: translateY(100%);
+}
+
+.menu__item:hover .menu__item-textinner {
+	color: var(--color-menu-hover);
+}
+
+.menu__item-sub {
+	display: none;
+	text-transform: uppercase;
+	font-weight: bold;
+	white-space: nowrap;
+	align-items: center;
+	position: relative;
+	margin-left: 2rem;
+	padding-left: 3rem;
+	opacity: 0;
+	transform: translateX(-1rem);
+	transition: transform 0.3s, opacity 0.3s;
+}
+
+.menu__item:hover .menu__item-sub {
+	opacity: 1;
+	transform: translateX(0);
+}
+
+.menu__item-sub::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 15%;
+	width: 1px;
+	height: 70%;
+	background: currentColor;
+	transform-origin: 0 100%;
+	transform: rotate(22.5deg) scale3d(1,0,1);
+	transition: transform 0.3s;
+}
+
+.menu__item:hover .menu__item-sub::before {
+	transform: rotate(22.5deg) scale3d(1,1,1);
+}
+
+.hover-reveal {
+	position: absolute;
+	z-index: -1;
+	width: 220px;
+	height: 320px;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+	opacity: 0;
+}
+
+.hover-reveal__inner {
+	overflow: hidden;
+}
+
+.hover-reveal__inner,
+.hover-reveal__img {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.hover-reveal__img {
+	background-size: cover;
+	background-position: 50% 50%;
+}
+
+.cursor {
+	display: none;
+}
+
+.credits {
+	align-self: flex-start;
+	padding: 5rem 0 0 0;
+}
+
+.credits a {
+	text-decoration: underline;
+}
+
+@media screen and (min-width: 53em) {
+	.frame {
+		flex-direction: column;
+		align-items: flex-end;
+		text-align: right;
+		background: none;
+		height: 50vh;
+		pointer-events: none;
+		padding-bottom: 0;
+	}
+	.frame__links a:not(:last-child) {
+		margin-right: 0;
+	}
+	.frame__links {
+		margin: 0.5rem 0 2rem;
+		justify-self: start;
+	}
+	.frame__links a {
+		margin-left: 0.5rem;
+		pointer-events: auto;
+	}
+	.frame__button {
+		cursor: not-allowed;
+		pointer-events: auto;
+		margin-top: auto;
+		transform: translateY(50%);
+	}
+	.menu {
+		padding-top: 20vh;
+	}
+	.menu__item {
+    	padding-left: 25vw;
+    	justify-content: initial;
+    }
+	.menu__item-text {
+		padding: 1vh 0;
+		font-size: 4vw;
+	}
+	.menu__item-sub {
+		display: flex;
+	}
+}
+
+@media (any-pointer: fine) {
+	.cursor {
+		position: fixed;
+		top: 0;
+		left: 0;
+		display: block;
+		pointer-events: none;
+	}
+	.cursor__inner {
+		fill: var(--cursor-fill);
+		stroke: var(--cursor-stroke);
+		stroke-width: var(--cursor-stroke-width);
+		opacity: 0.3;
+	}
+	.credits {
+		padding-left: 25vw;
+	}
+}
+
+/*! locomotive-scroll v3.5.4 | MIT License | https://github.com/locomotivemtl/locomotive-scroll */
+html.has-scroll-smooth {
+	overflow: hidden; 
+}
+  
+html.has-scroll-dragging {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none; 
+}
+  
+.has-scroll-smooth body {
+	overflow: hidden; 
+}
+  
+.has-scroll-smooth [data-scroll-container] {
+	min-height: 100vh; 
+}
+  
+.c-scrollbar {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 11px;
+	height: 100vh;
+	transform-origin: center right;
+	transition: transform 0.3s, opacity 0.3s;
+	opacity: 0; 
+}
+.c-scrollbar:hover {
+	transform: scaleX(1.45); 
+}
+.c-scrollbar:hover, .has-scroll-scrolling .c-scrollbar, .has-scroll-dragging .c-scrollbar {
+	opacity: 1; 
+}
+  
+.c-scrollbar_thumb {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-color: black;
+	opacity: 0.5;
+	width: 7px;
+	border-radius: 10px;
+	margin: 2px;
+	cursor: -webkit-grab;
+	cursor: grab; 
+}
+.has-scroll-dragging .c-scrollbar_thumb {
+	cursor: -webkit-grabbing;
+	cursor: grabbing; 
+}
