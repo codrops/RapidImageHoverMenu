@@ -2,7 +2,7 @@
 
 A hover effect for a menu where images appear with an animation for each item.
 
-![Image Title](link)
+![Rapid Image Hover Menu](https://tympanus.net/codrops/wp-content/uploads/2020/07/rapid_feat.jpg)
 
 [Article on Codrops](https://tympanus.net/codrops/?p=50362)
 

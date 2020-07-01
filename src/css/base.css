@@ -26,7 +26,6 @@ body {
 	font-family: degular, sans-serif;
 }
 
-
 /* Page Loader */
 .js .loading::before,
 .js .loading::after {
