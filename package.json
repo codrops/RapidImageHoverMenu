@@ -21,7 +21,7 @@
     "url": "https://github.com/codrops/RapidImageHoverMenu/issues"
   },
   "dependencies": {
-    "gsap": "^3.3.4",
+    "gsap": "^3.6.0",
     "imagesloaded": "^4.1.4",
     "locomotive-scroll": "^3.5.4",
     "parcel-bundler": "^1.12.4"
